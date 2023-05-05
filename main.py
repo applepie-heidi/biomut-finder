@@ -25,14 +25,14 @@ def main_test():
 
 
 def main():
-    gen0 = input("data/ecoli.fasta")[0].seq
+    gen0 = input("data/lambda.fasta")[0].seq
     gen_reads = input("data/ecoli_simulated_reads.fasta")
 
     k, w = 15, 5
     mg2_1 = generate_minimizers(gen0, w, k)
     mg2_2 = generate_minimizers_list(gen0, w, k)
     # print(mg2_1)
-    # print(mg2_2)
+    print(mg2_2)
     print(mg2_1 == mg2_2)
     print(
         f'memory for minimizer: {sys.getsizeof(mg2_1)}, memory for minimizer_second: {sys.getsizeof(mg2_2)}: ')

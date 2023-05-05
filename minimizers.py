@@ -1,4 +1,4 @@
-from typing import Set, List
+from typing import Set, List, Tuple
 import functools
 import time
 
@@ -65,13 +65,13 @@ def generate_minimizers(seq: str, w: int, k: int) -> Set[tuple]:
 
 
 @timer
-def generate_minimizers_list(seq: str, w: int, k: int) -> List[str]:
+def generate_minimizers_list(seq: str, w: int, k: int) -> List[Tuple]:
     """Generate set of all (w,k)-minimizers with position index from a sequence
      using array to save current list of k-mers"""
 
     init_array = [(seq[:k], 0)]
 
-    minimizers = [seq[:k]]
+    minimizers = [(seq[:k], 0)]
     minimizers_set = {(seq[:k], 0)}
 
     # find (u,k)-minimizer for all 1 < u < w at the beginning of a sequence
@@ -81,7 +81,7 @@ def generate_minimizers_list(seq: str, w: int, k: int) -> List[str]:
         minimizer = min(init_array)
         if minimizer not in minimizers_set:
             minimizers_set.add(minimizer)
-            minimizers.append(minimizer[0])
+            minimizers.append(minimizer)
 
     # find all (w,k)-minimizers
     for i in range(w, len(seq) - k + 1):
@@ -91,7 +91,7 @@ def generate_minimizers_list(seq: str, w: int, k: int) -> List[str]:
         minimizer = min(init_array)
         if minimizer not in minimizers_set:
             minimizers_set.add(minimizer)
-            minimizers.append(minimizer[0])
+            minimizers.append(minimizer)
 
     # find (u,k)-minimizer for all u < w at the end of a sequence
     for i in range(w - 1):
@@ -99,6 +99,6 @@ def generate_minimizers_list(seq: str, w: int, k: int) -> List[str]:
         minimizer = min(init_array)
         if minimizer not in minimizers_set:
             minimizers_set.add(minimizer)
-            minimizers.append(minimizer[0])
+            minimizers.append(minimizer)
 
     return minimizers
