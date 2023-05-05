@@ -1,5 +1,7 @@
 from typing import Set
-import functools, time
+import functools
+import time
+
 
 def timer(func):
     """Decorate a function to determine the runtime of the function"""
@@ -19,16 +21,17 @@ def timer(func):
 def minimizer(seq: str, w: int, k: int) -> Set[tuple]:
     """Generate a set of all (w,k)-minimizers with position index from a sequence"""
 
-    minimizers = set() 
-    l = w + k - 1 # window lenght 
-    lseq = len(seq) # sequence lenght
+    minimizers = set()
+    l = w + k - 1  # window length
+    lseq = len(seq)  # sequence length
 
-    for i in range(lseq - l + 1): # loop of all windows
-        kmers = ((seq[j: j + k], j) for j in range(i, i + w)) # create a generator of all k-mers
-        minimizers.add(min(kmers)) # find a minimizer and add in the set
+    for i in range(lseq - l + 1):  # loop of all windows
+        # create a generator of all k-mers
+        kmers = ((seq[j: j + k], j) for j in range(i, i + w))
+        minimizers.add(min(kmers))  # find a minimizer and add in the set
 
     # find (u,k)-minimizer for all u < w at the beginning and the end of a sequence
-    for i in range(k, l): # loop of all windows, where u < w
+    for i in range(k, l):  # loop of all windows, where u < w
         begin_kmers = ((seq[j: j + k], j) for j in range(i - k + 1))
         end_kmers = ((seq[j: j + k], j) for j in range(lseq - i, lseq - k + 1))
         minimizers.add(min(begin_kmers))
@@ -41,20 +44,20 @@ def minimizer(seq: str, w: int, k: int) -> Set[tuple]:
 def minimizer_second(seq: str, w: int, k: int) -> Set[tuple]:
     """Generate set of all (w,k)-minimizers with position index from a sequence
      using array to save current list of k-mers"""
-    
+
     minimizers = [(seq[:k], 0)]
     init_array = [(seq[:k], 0)]
 
-    for i in range(1, w): # find (u,k)-minimizer for all 1 < u < w at the beginning of a sequence
+    for i in range(1, w):  # find (u,k)-minimizer for all 1 < u < w at the beginning of a sequence
         init_array.append((seq[i: i + k], i))
         minimizers.append(min(init_array))
 
-    for i in range(w, len(seq) - k + 1): # find all (w,k)-minimizers
+    for i in range(w, len(seq) - k + 1):  # find all (w,k)-minimizers
         del init_array[0]
         init_array.append((seq[i: i + k], i))
         minimizers.append(min(init_array))
 
-    for i in range(w - 1): # find (u,k)-minimizer for all u < w at the end of a sequence
+    for i in range(w - 1):  # find (u,k)-minimizer for all u < w at the end of a sequence
         del init_array[0]
         minimizers.append(min(init_array))
 
