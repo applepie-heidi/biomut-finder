@@ -102,3 +102,36 @@ def generate_minimizers_list(seq: str, w: int, k: int) -> List[Tuple]:
             minimizers.append(minimizer)
 
     return minimizers
+
+@timer
+def generate_minimizers_new(seq: str, w: int, k: int) -> List[Tuple]:
+    """Generate set of all (w,k)-minimizers with position index from a sequence
+     using array to save current list of k-mers and additional variables to exclude repeating minimizers"""
+
+    minimizers = [(seq[:k], 0)]
+    init_array = [(seq[:k], 0)]
+    prev_minimizer = (seq[:k], 0) # save previous minimizer
+
+    for i in range(1, w):  # find (u,k)-minimizer for all 1 < u < w at the beginning of a sequence
+        init_array.append((seq[i: i + k], i))
+        current_minimizer = min(init_array) # calculate and save current minimizer
+        if current_minimizer != prev_minimizer:
+            minimizers.append(current_minimizer)
+            prev_minimizer = current_minimizer
+
+    for i in range(w, len(seq) - k + 1):  # find all (w,k)-minimizers
+        del init_array[0]
+        init_array.append((seq[i: i + k], i))
+        current_minimizer = min(init_array)
+        if current_minimizer != prev_minimizer:
+            minimizers.append(current_minimizer)
+            prev_minimizer = current_minimizer
+
+    for i in range(w - 1):  # find (u,k)-minimizer for all u < w at the end of a sequence
+        del init_array[0]
+        current_minimizer = min(init_array)
+        if current_minimizer != prev_minimizer:
+            minimizers.append(current_minimizer)
+            prev_minimizer = current_minimizer
+
+    return minimizers
