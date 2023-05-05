@@ -38,6 +38,7 @@ https://en.wikipedia.org/wiki/Longest_increasing_subsequence#Efficient_algorithm
         k = p[k]
     return s
 
+
 def find_aligning_minimizers(first_minimizers: Sequence[Tuple], second_minimizers: Sequence[Tuple]) -> List[Tuple]:
     """Find list of  minimizers for aligning with index in first sequence and index in second sequence using LIS algorithm"""
 

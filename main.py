@@ -1,34 +1,42 @@
-from minimizers import minimizer, minimizer_second, timer
+from minimizers import generate_minimizers, generate_minimizers_list, timer
 import sys
 from input import input
 
-if __name__ == '__main__':
-    gen0 = input("data/ecoli.fasta")[0].seq
 
+def main_test():
     gen = "AGGGGGAGTTTGAGA"
     gen2 = "AGCTAGTGTTTGAGAATTTTTTGTACCGCGTACGTTGCACCGTACCCAGTCTCTCGCGCGTGCGTCAACGTACGTCGAGACTGCATGCATGCGCGTGCAGTTTTTTTTCGCGCGCGCGCGCGCGCGCGTGGGTGTGTGTGTGTGTGTGTGTGTGCGCGCGCGCGCGCGCAATATTTAAATTTCCCGGGCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTTCGCGCGCGCGCGGGGGAAGGGAGGGGAGGGAGGGAGGAGGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAAAAAAAACCCCTCTTTCTTTTCACACCCACCCCACCCCACCCACCCACCCCACCCCACCCCACCCCACCCCACCCCACCCCACCCCACCCCACCCCACCCCACCCCACCCTCTTTTTTTTTTTTACCCACACACACACACACACACACAGGGTGTGTGTGTGTGTGTGTGTGTGTGCGCGTCGCTCTCTCTCTCTCCCCTTTCCCGGGAAATTCCGCTGCGTCGTCGTCGTCGTCGTAAACGCGCGCGCGCCCGGGTTTGGCCCGGTTCCAAGCGCGCGTGTGTGTGAACGCGCGCGCGTGTGGAGAGAGAGAGAGTTTTTTTTTTTTGTGTACCCCGCGTTGTCTCTCTGCGAACGATCGCGCGCGCGCGCGCGCTGGGGTGGGGGTGGGGTGGGGCGGGGCGCGAAAAAAAAAAAAAGAGAGGGGGGGGTGTGTGTGAGTGACCCGTCAGTCAGTCGTACGTTGGGGGGGTGTGGCAGTGGGGGGGGGGGGGGGGGGGCGTGTGTGTGGCGTGCAGTCAGTCAGTCAGTCAGTACGTACGTACGTACCCCCAGTGAGAGTGGGGTCAGTCAAAAGTCAGTTTTGCGTTGGGTACGTACGTACGTTGCATGGGCGGGGGGAAAAACCCCCTTTTGGGCGTGGTTTTTGTGGGGTGTGTGTGTGTGTGGGGGGGGGGGGGGGGGGGGGGGGGGGGCCCCCCCCCGCGCGCTGCGTCGTCGTCGTCTGCTGCTGCCGTCGAAATGGCCAAATGCATGCCCACGTCATGCATGCATGCATGCATGCATGCGTACGTACGTCATGCGTGGGCGTACGTCGTGCGTGGCGTGGCCCAATGC"
     k, w = 4, 6
-    mg1_1 = minimizer(gen, w, k)
-    mg1_2 = minimizer_second(gen, w, k)
+    mg1_1 = generate_minimizers(gen, w, k)
+    mg1_2 = generate_minimizers(gen, w, k)
     print(mg1_1)
     print(mg1_2)
     print(mg1_1 == mg1_2)
     print(
         f'memory for minimizer: {sys.getsizeof(mg1_1)}, memory for minimizer_second: {sys.getsizeof(mg1_2)}: ')
 
-    mg2_1 = minimizer(gen2, w, k)
-    mg2_2 = minimizer_second(gen2, w, k)
+    mg2_1 = generate_minimizers(gen2, w, k)
+    mg2_2 = generate_minimizers(gen2, w, k)
     print(mg2_1)
     print(mg2_2)
     print(mg2_1 == mg2_2)
     print(
         f'memory for minimizer: {sys.getsizeof(mg2_1)}, memory for minimizer_second: {sys.getsizeof(mg2_2)}: ')
 
+
+def main():
+    gen0 = input("data/ecoli.fasta")[0].seq
+    gen_reads = input("data/ecoli_simulated_reads.fasta")
+
     k, w = 15, 5
-    mg2_1 = minimizer(gen0, w, k)
-    mg2_2 = minimizer_second(gen0, w, k)
+    mg2_1 = generate_minimizers(gen0, w, k)
+    mg2_2 = generate_minimizers_list(gen0, w, k)
     # print(mg2_1)
     # print(mg2_2)
     print(mg2_1 == mg2_2)
     print(
         f'memory for minimizer: {sys.getsizeof(mg2_1)}, memory for minimizer_second: {sys.getsizeof(mg2_2)}: ')
+
+
+if __name__ == '__main__':
+    main()

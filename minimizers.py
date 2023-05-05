@@ -1,4 +1,4 @@
-from typing import Set
+from typing import Set, List
 import functools
 import time
 
@@ -18,7 +18,7 @@ def timer(func):
 
 
 @timer
-def minimizer(seq: str, w: int, k: int) -> Set[tuple]:
+def minimizer_old(seq: str, w: int, k: int) -> Set[tuple]:
     """Generate a set of all (w,k)-minimizers with position index from a sequence"""
 
     minimizers = set()
@@ -41,7 +41,7 @@ def minimizer(seq: str, w: int, k: int) -> Set[tuple]:
 
 
 @timer
-def minimizer_second(seq: str, w: int, k: int) -> Set[tuple]:
+def generate_minimizers(seq: str, w: int, k: int) -> Set[tuple]:
     """Generate set of all (w,k)-minimizers with position index from a sequence
      using array to save current list of k-mers"""
 
@@ -62,3 +62,43 @@ def minimizer_second(seq: str, w: int, k: int) -> Set[tuple]:
         minimizers.append(min(init_array))
 
     return set(minimizers)
+
+
+@timer
+def generate_minimizers_list(seq: str, w: int, k: int) -> List[str]:
+    """Generate set of all (w,k)-minimizers with position index from a sequence
+     using array to save current list of k-mers"""
+
+    init_array = [(seq[:k], 0)]
+
+    minimizers = [seq[:k]]
+    minimizers_set = {(seq[:k], 0)}
+
+    # find (u,k)-minimizer for all 1 < u < w at the beginning of a sequence
+    for i in range(1, w):
+        m = (seq[i: i + k], i)
+        init_array.append(m)
+        minimizer = min(init_array)
+        if minimizer not in minimizers_set:
+            minimizers_set.add(minimizer)
+            minimizers.append(minimizer[0])
+
+    # find all (w,k)-minimizers
+    for i in range(w, len(seq) - k + 1):
+        del init_array[0]
+        m = (seq[i: i + k], i)
+        init_array.append(m)
+        minimizer = min(init_array)
+        if minimizer not in minimizers_set:
+            minimizers_set.add(minimizer)
+            minimizers.append(minimizer[0])
+
+    # find (u,k)-minimizer for all u < w at the end of a sequence
+    for i in range(w - 1):
+        del init_array[0]
+        minimizer = min(init_array)
+        if minimizer not in minimizers_set:
+            minimizers_set.add(minimizer)
+            minimizers.append(minimizer[0])
+
+    return minimizers
