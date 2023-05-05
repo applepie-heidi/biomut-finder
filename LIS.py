@@ -1,8 +1,9 @@
 from collections.abc import Sequence
+from typing import Tuple
 # import math
 
 
-def find_lis(x: Sequence[int]) -> list[int]:
+def find_lis(x: Sequence[Tuple]) -> list[Tuple]:
     """Find the longest increasing subsequence.
 Description of the algorithm and pseudo-code at the link:
 https://en.wikipedia.org/wiki/Longest_increasing_subsequence#Efficient_algorithms"""
@@ -19,7 +20,7 @@ https://en.wikipedia.org/wiki/Longest_increasing_subsequence#Efficient_algorithm
         while left <= right:
             # mid = math.ceil((left + right)/2)
             mid = (left + right) // 2
-            if x[m[mid]] < x[i]:
+            if x[m[mid]][2] < x[i][2]:
                 left = mid + 1
             else:
                 right = mid - 1
