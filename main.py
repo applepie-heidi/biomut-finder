@@ -1,6 +1,6 @@
 from minimizers import generate_minimizers, generate_minimizers_list, generate_minimizers_new
 import sys
-from input import input
+from readfasta import read_fasta
 
 
 def main_test():
@@ -25,8 +25,8 @@ def main_test():
 
 
 def main():
-    gen_reads = input("data/ecoli_simulated_reads.fasta")
-    gen_ref = input("data/ecoli.fasta")[0].seq
+    gen_reads = read_fasta("data/ecoli_simulated_reads.fasta")
+    gen_ref = read_fasta("data/ecoli.fasta")[0].seq
 
     # turn into string IMPORTANT, 7 times faster
     gen_ref = str(gen_ref)
