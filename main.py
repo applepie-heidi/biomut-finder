@@ -2,7 +2,13 @@ import sys
 
 from minimizers import generate_minimizers
 from readfasta import read_fasta
-from LIS import find_aligning_minimizers
+from mapper import find_aligning_minimizers
+
+
+def reversed_complement(sequence: str) -> str:
+    """Return reversed complement of a sequence"""
+    complement = {"A": "T", "T": "A", "G": "C", "C": "G"}
+    return "".join(complement[base] for base in reversed(sequence))
 
 
 def main_test():
@@ -39,7 +45,7 @@ def main():
 
     for gen_read in gen_reads:
         gen_read = str(gen_read.seq)
-        gen_read_reversed = gen_read[::-1]
+        gen_read_reversed = reversed_complement(gen_read)
         read_minimizers = generate_minimizers(gen_read, w, k)
         read_minimizers_reversed = generate_minimizers(gen_read_reversed, w, k)
         print(find_aligning_minimizers(ref_minimizers, read_minimizers))
