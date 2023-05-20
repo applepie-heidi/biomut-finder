@@ -3,7 +3,7 @@ from typing import Tuple, List
 # import math
 
 
-def find_lis(x: Sequence[Tuple]) -> List[Tuple]:
+def find_lis(x):# Sequence[Tuple]) -> List[Tuple]:
     """Find the longest increasing subsequence.
 Description of the algorithm and pseudo-code at the link:
 https://en.wikipedia.org/wiki/Longest_increasing_subsequence#Efficient_algorithms"""
@@ -39,15 +39,15 @@ https://en.wikipedia.org/wiki/Longest_increasing_subsequence#Efficient_algorithm
     return s
 
 
-def find_aligning_minimizers(first_minimizers: Sequence[Tuple], second_minimizers: Sequence[Tuple]) -> List[Tuple]:
-    """Find list of  minimizers for aligning with index in first sequence and index in second sequence using LIS algorithm"""
+def find_aligning_minimizers(first_minimizers, second_minimizers): # Sequence[Tuple], second_minimizers: Sequence[Tuple]) -> List[Tuple]:
+    """Find list of  minimizers for aligning with index in first sequence 
+       and index in second sequence using LIS algorithm"""
 
-    if type(first_minimizers) == set:
-        first_minimizers = sorted(list(first_minimizers), key=lambda x: x[1])
-        second_minimizers = sorted(list(second_minimizers), key=lambda x: x[1])
     res = []
     for i1, j1 in first_minimizers:
         for i2, j2 in second_minimizers:
             if i1 == i2:
+                print(f"i1={i1} vs i2={i2}")
                 res.append((i1, j1, j2))
+    print("----------",res)
     return find_lis(res)

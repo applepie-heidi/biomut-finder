@@ -1,6 +1,8 @@
-from minimizers import generate_minimizers, generate_minimizers_list, generate_minimizers_new
 import sys
+
+from minimizers import generate_minimizers
 from readfasta import read_fasta
+from LIS import find_aligning_minimizers
 
 
 def main_test():
@@ -25,14 +27,24 @@ def main_test():
 
 
 def main():
-    gen_reads = read_fasta("data/ecoli_simulated_reads.fasta")
-    gen_ref = read_fasta("data/ecoli.fasta")[0].seq
+    k, w = 15, 5
+
+    gen_ref = read_fasta("data/lambda.fasta")[0].seq
+    gen_reads = read_fasta("data/lambda_simulated_reads.fasta")
 
     # turn into string IMPORTANT, 7 times faster
     gen_ref = str(gen_ref)
 
-    k, w = 15, 5
-    mg2_1 = generate_minimizers_new(gen_ref, w, k)
+    ref_minimizers = generate_minimizers(gen_ref, w, k)
+
+    for gen_read in gen_reads:
+        gen_read = str(gen_read.seq)
+        gen_read_reversed = gen_read[::-1]
+        read_minimizers = generate_minimizers(gen_read, w, k)
+        read_minimizers_reversed = generate_minimizers(gen_read_reversed, w, k)
+        print(find_aligning_minimizers(ref_minimizers, read_minimizers))
+        print(find_aligning_minimizers(ref_minimizers, read_minimizers_reversed))
+        print()
 
 
 if __name__ == '__main__':

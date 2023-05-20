@@ -41,7 +41,7 @@ def minimizer_old(seq: str, w: int, k: int) -> Set[tuple]:
 
 
 @timer
-def generate_minimizers(seq: str, w: int, k: int) -> Set[tuple]:
+def generate_minimizers2(seq: str, w: int, k: int) -> Set[tuple]:
     """Generate set of all (w,k)-minimizers with position index from a sequence
      using array to save current list of k-mers"""
 
@@ -104,7 +104,7 @@ def generate_minimizers_list(seq: str, w: int, k: int) -> List[Tuple]:
     return minimizers
 
 @timer
-def generate_minimizers_new(seq: str, w: int, k: int) -> List[Tuple]:
+def generate_minimizers(seq: str, w: int, k: int) -> List[Tuple]:
     """Generate set of all (w,k)-minimizers with position index from a sequence
      using array to save current list of k-mers and additional variables to exclude repeating minimizers"""
 
