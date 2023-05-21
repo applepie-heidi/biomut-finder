@@ -33,7 +33,7 @@ def main_test():
 
 
 def main():
-    k, w = 15, 5
+    k, w = 10, 5
 
     gen_ref = read_fasta("data/lambda.fasta")[0].seq
     gen_reads = read_fasta("data/lambda_simulated_reads.fasta")

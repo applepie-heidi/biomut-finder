@@ -47,7 +47,5 @@ def find_aligning_minimizers(first_minimizers, second_minimizers): # Sequence[Tu
     for i1, j1 in first_minimizers:
         for i2, j2 in second_minimizers:
             if i1 == i2:
-                print(f"i1={i1} vs i2={i2}")
                 res.append((i1, j1, j2))
-    print("----------",res)
     return find_lis(res)
