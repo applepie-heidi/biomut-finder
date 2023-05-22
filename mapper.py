@@ -64,6 +64,64 @@ def score_alignment(sequence1, sequence2):
     return score
 
 
+def smith_waterman_algorithm(sequence1, sequence2):
+    match_score = 2
+    mismatch_penalty = -1
+    gap_penalty = -2
+
+    # Initialize the scoring matrix
+    rows = len(sequence1) + 1
+    cols = len(sequence2) + 1
+    scoring_matrix = [[0] * cols for _ in range(rows)]
+
+    # Initialize variables to store the maximum score and its position
+    max_score = 0
+    max_position = (0, 0)
+
+    # Fill the scoring matrix
+    for i in range(1, rows):
+        for j in range(1, cols):
+            # Calculate the match/mismatch score
+            if sequence1[i - 1] == sequence2[j - 1]:
+                match = scoring_matrix[i - 1][j - 1] + match_score
+            else:
+                match = scoring_matrix[i - 1][j - 1] + mismatch_penalty
+
+            # Calculate the gap scores
+            delete = scoring_matrix[i - 1][j] + gap_penalty
+            insert = scoring_matrix[i][j - 1] + gap_penalty
+
+            # Determine the maximum score for the current position
+            score = max(0, match, delete, insert)
+            scoring_matrix[i][j] = score
+
+            # Update the maximum score and its position if necessary
+            if score > max_score:
+                max_score = score
+                max_position = (i, j)
+
+    # Traceback to find the local alignment
+    alignment = []
+    i, j = max_position
+    while i > 0 and j > 0 and scoring_matrix[i][j] > 0:
+        if scoring_matrix[i][j] == scoring_matrix[i - 1][j - 1] + (
+                match_score if sequence1[i - 1] == sequence2[
+                    j - 1] else mismatch_penalty):
+            alignment.append((sequence1[i - 1], sequence2[j - 1]))
+            i -= 1
+            j -= 1
+        elif scoring_matrix[i][j] == scoring_matrix[i - 1][j] + gap_penalty:
+            alignment.append((sequence1[i - 1], '-'))
+            i -= 1
+        else:
+            alignment.append(('-', sequence2[j - 1]))
+            j -= 1
+
+    alignment.reverse()  # Reverse the alignment list to obtain the correct order
+
+    return alignment, max_score
+
+
 def align_sequences(sequence1: str, sequence2: str, aligning_minimizers):
     """Align two sequences using aligning minimizers"""
 
