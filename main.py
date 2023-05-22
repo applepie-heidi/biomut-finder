@@ -2,7 +2,7 @@ import sys
 
 from minimizers import generate_minimizers
 from readfasta import read_fasta
-from mapper import find_aligning_minimizers
+from mapper import find_aligning_minimizers, align_sequences
 
 
 def reversed_complement(sequence: str) -> str:
@@ -48,9 +48,16 @@ def main():
         gen_read_reversed = reversed_complement(gen_read)
         read_minimizers = generate_minimizers(gen_read, w, k)
         read_minimizers_reversed = generate_minimizers(gen_read_reversed, w, k)
-        print(find_aligning_minimizers(ref_minimizers, read_minimizers))
-        print(find_aligning_minimizers(ref_minimizers, read_minimizers_reversed))
-        print()
+        aligning_minimizers = find_aligning_minimizers(ref_minimizers,
+                                                       read_minimizers)
+        aligning_minimizers_reversed = find_aligning_minimizers(ref_minimizers,
+                                                                read_minimizers_reversed)
+        subsequence, position, score = align_sequences(gen_ref, gen_read,
+                                             aligning_minimizers)
+        subsequence_reversed, position_reversed, score_reversed = align_sequences(gen_ref,
+                                                               gen_read_reversed,
+                                                               aligning_minimizers_reversed)
+        print(f"Score: {score}, Score reversed: {score_reversed}")
 
 
 if __name__ == '__main__':
