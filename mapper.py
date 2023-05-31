@@ -1,10 +1,3 @@
-from collections.abc import Sequence
-from typing import Tuple, List
-
-
-# import math
-
-
 def find_lis(x):  # Sequence[Tuple]) -> List[Tuple]:
     """Find the longest increasing subsequence.
 Description of the algorithm and pseudo-code at the link:
@@ -54,17 +47,9 @@ def find_aligning_minimizers(first_minimizers, second_minimizers):
     return find_lis(res)
 
 
-def score_alignment(sequence1, sequence2):
-    """Score alignment of two sequences"""
-
-    score = 0
-    for i in range(len(sequence1)):
-        if sequence1[i] == sequence2[i]:
-            score += 1
-    return score
-
-
 def smith_waterman_algorithm(sequence1, sequence2):
+    """Smith-Waterman algorithm for local alignment of two sequences"""
+
     match_score = 2
     mismatch_penalty = -1
     gap_penalty = -2
@@ -117,21 +102,93 @@ def smith_waterman_algorithm(sequence1, sequence2):
             alignment.append(('-', sequence2[j - 1]))
             j -= 1
 
-    alignment.reverse()  # Reverse the alignment list to obtain the correct order
+    # Reverse the alignment list to obtain the correct order
+    alignment.reverse()
 
     return alignment, max_score
+
+
+def decide_indels(subsequence1: str, subsequence2: str):
+    score = 0
+    if len(subsequence1) > len(subsequence2):
+        result = ["-"] * len(subsequence1)
+        i = -1
+        for j, letter in enumerate(subsequence2):
+            try:
+                i = subsequence1[i + 1:].index(letter)
+                if len(subsequence1) - i <= len(subsequence2) - j:
+                    result[i] = letter
+                    score += 1
+                else:
+                    result[j] = letter
+                    i = j
+            except ValueError:
+                result[j] = letter
+                i = j
+    elif len(subsequence1) < len(subsequence2):
+        result = []
+        i = -1
+        for j, letter in enumerate(subsequence1):
+            try:
+                i2 = subsequence2[i + 1:].index(letter)
+                if len(subsequence2) - i2 <= len(subsequence1) - j:
+                    result.append(subsequence2[i + 1:i2 + 1])
+                    i = i2
+                else:
+                    result.append(letter)
+                    i = j
+                    score += 1
+            except ValueError:
+                result.append(letter)
+                i = j
+                score += 1
+    else:
+        result = []
+        for i in range(len(subsequence1)):
+            letter1 = subsequence1[i]
+            letter2 = subsequence2[i]
+            result.append(letter2)
+            if letter1 == letter2:
+                score += 1
+    return result, score
 
 
 def align_sequences(sequence1: str, sequence2: str, aligning_minimizers):
     """Align two sequences using aligning minimizers"""
 
-    subsequences = []
-    for i, j1, j2 in aligning_minimizers:
-        # extend alignment
-        start_position = j1 - j2
-        end_position = j1 + len(sequence2) - j2
-        subsequence = sequence1[start_position: end_position]
-        score = score_alignment(subsequence, sequence2)
-        subsequences.append((subsequence, start_position, score))
-    # find best alignment
-    return max(subsequences, key=lambda x: x[2])
+    if len(aligning_minimizers) == 0:
+        return -1, [], 0
+
+    final_result = []
+    final_score = 0
+
+    i_prev, position1_prev, position2_prev = aligning_minimizers[0]
+    start_position = position1_prev - position2_prev
+    if start_position < 0:
+        start_position = 0
+    subsequence1 = sequence1[start_position:position1_prev]
+    subsequence2 = sequence2[:position2_prev]
+    result, score = decide_indels(subsequence1, subsequence2)
+    final_result.extend(result)
+    final_score += score
+
+    for index in range(1, len(aligning_minimizers)):
+        i, position1, position2 = aligning_minimizers[index]
+        subsequence1 = sequence1[position1_prev:position1]
+        subsequence2 = sequence2[position2_prev:position2]
+        result, score = decide_indels(subsequence1, subsequence2)
+        final_result.extend(result)
+        final_score += score
+
+        if index == len(aligning_minimizers) - 1:
+            end_position = position1 + len(sequence2) - position2
+            if end_position > len(sequence1):
+                end_position = len(sequence1)
+            subsequence1 = sequence1[position1:end_position]
+            subsequence2 = sequence2[position2:]
+            result, score = decide_indels(subsequence1, subsequence2)
+            final_result.extend(result)
+            final_score += score
+        i_prev, position1_prev, position2_prev = i, position1, position2
+
+    return start_position, final_result, final_score

@@ -1,8 +1,8 @@
-import sys
+import collections
 
+from mapper import find_aligning_minimizers, align_sequences
 from minimizers import generate_minimizers
 from readfasta import read_fasta
-from mapper import find_aligning_minimizers, align_sequences
 
 
 def reversed_complement(sequence: str) -> str:
@@ -11,29 +11,43 @@ def reversed_complement(sequence: str) -> str:
     return "".join(complement[base] for base in reversed(sequence))
 
 
-def main_test():
-    gen = "AGGGGGAGTTTGAGA"
-    gen2 = "AGCTAGTGTTTGAGAATTTTTTGTACCGCGTACGTTGCACCGTACCCAGTCTCTCGCGCGTGCGTCAACGTACGTCGAGACTGCATGCATGCGCGTGCAGTTTTTTTTCGCGCGCGCGCGCGCGCGCGTGGGTGTGTGTGTGTGTGTGTGTGTGCGCGCGCGCGCGCGCAATATTTAAATTTCCCGGGCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTTCGCGCGCGCGCGGGGGAAGGGAGGGGAGGGAGGGAGGAGGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAGAAAAAAAACCCCTCTTTCTTTTCACACCCACCCCACCCCACCCACCCACCCCACCCCACCCCACCCCACCCCACCCCACCCCACCCCACCCCACCCCACCCCACCCCACCCTCTTTTTTTTTTTTACCCACACACACACACACACACACAGGGTGTGTGTGTGTGTGTGTGTGTGTGCGCGTCGCTCTCTCTCTCTCCCCTTTCCCGGGAAATTCCGCTGCGTCGTCGTCGTCGTCGTAAACGCGCGCGCGCCCGGGTTTGGCCCGGTTCCAAGCGCGCGTGTGTGTGAACGCGCGCGCGTGTGGAGAGAGAGAGAGTTTTTTTTTTTTGTGTACCCCGCGTTGTCTCTCTGCGAACGATCGCGCGCGCGCGCGCGCTGGGGTGGGGGTGGGGTGGGGCGGGGCGCGAAAAAAAAAAAAAGAGAGGGGGGGGTGTGTGTGAGTGACCCGTCAGTCAGTCGTACGTTGGGGGGGTGTGGCAGTGGGGGGGGGGGGGGGGGGGCGTGTGTGTGGCGTGCAGTCAGTCAGTCAGTCAGTACGTACGTACGTACCCCCAGTGAGAGTGGGGTCAGTCAAAAGTCAGTTTTGCGTTGGGTACGTACGTACGTTGCATGGGCGGGGGGAAAAACCCCCTTTTGGGCGTGGTTTTTGTGGGGTGTGTGTGTGTGTGGGGGGGGGGGGGGGGGGGGGGGGGGGGCCCCCCCCCGCGCGCTGCGTCGTCGTCGTCTGCTGCTGCCGTCGAAATGGCCAAATGCATGCCCACGTCATGCATGCATGCATGCATGCATGCGTACGTACGTCATGCGTGGGCGTACGTCGTGCGTGGCGTGGCCCAATGC"
-    k, w = 4, 6
-    mg1_1 = generate_minimizers(gen, w, k)
-    mg1_2 = generate_minimizers(gen, w, k)
-    print(mg1_1)
-    print(mg1_2)
-    print(mg1_1 == mg1_2)
-    print(
-        f'memory for minimizer: {sys.getsizeof(mg1_1)}, memory for minimizer_second: {sys.getsizeof(mg1_2)}: ')
+def find_mutations(gen_ref: str, sequence, filename: str):
+    """Find mutations in a sequence compared to a reference genome
+    and write them to a file"""
+    with open(filename, "w") as file:
+        for i in range(len(gen_ref)):
+            sequence_list = sequence[i].split(",")
+            chosen, chosen_count = \
+                collections.Counter(sequence_list).most_common(1)[0][0]
+            if chosen != gen_ref[i]:
+                if chosen == "-":
+                    file.write(f"D,{i},-\n")
+                elif len(chosen) > 1:
+                    for letter in range(chosen):
+                        file.write(f"I,{i},{letter}\n")
+                else:
+                    file.write(f"X,{i},{chosen}\n")
+                file.write(f"{i} {chosen} {chosen_count}\n")
 
-    mg2_1 = generate_minimizers(gen2, w, k)
-    mg2_2 = generate_minimizers(gen2, w, k)
-    print(mg2_1)
-    print(mg2_2)
-    print(mg2_1 == mg2_2)
-    print(
-        f'memory for minimizer: {sys.getsizeof(mg2_1)}, memory for minimizer_second: {sys.getsizeof(mg2_2)}: ')
+
+def test_main():
+    k, w = 10, 5
+    gen_ref = read_fasta("data/lambda.fasta")[0].seq
+    gen_read = "GGGACGAAGGTTCCTGCGCGGTTAGATCGATTATTATTCGGTGCCGATATTCGTAGAACAAAACCGAGGACACTGGAAGGGCGAGTAGCTCTCTCTCGCAAGGGGACTTGGGTACAAGGATGCAAACCTGCAAAAACCAATATCAGGCTGGGGCTACATTTTCGAGTAGGAATACACAGTCGTGTAACCTTGAGATCTTTCACATTAATCCCAACGACCACAGTCGTACACGAGCATCTTACGGAAGTTTATTTAGATTCCGGGCAAAGCGCATCAACAGCGGGTATGTTGTAATAAACCGCTTGGGGTGATTTTGGAGCCATAAAGCTGGCACTTGTTGCGAGTCGCTTTGGGGTGAAGTCTCATACCTCTCGGGTCGGGACTGCCAGACAGGACTAGCAGCCCTCGTCGCCAATATCATCGCCCCAAGGCAGTAACATATTCCAATAGTTAGTGGCGCTTAATTCGATACCGTAACAGATTACTACTACAATTCGGTATGTCATGATGACTGATCGTCACCTGGATAAAGTGTGTTATCTAGGCGCGTCTCTGAGGTCAGCTATTTCCTTTTTTGCTTAAGAAACCTCCGGGAACCAGTGCACCGCCGGACGTGAAGTGCAGGAGCACAATCCGCACTGCCCGACACGCTCAAGCAGATGAGCGGCGCTCCCCGGTTTCACGGATATGTGGTTGGTGGCGACTATTAGTATTAGACCCTTCGTCGTACAGTTTATCCGGAGCGTAGCGGGGCGGTTCGCGATGCTGACTTCCTTCGCCATGTGCCCGTGCGGGATAGAAAGGTCTAATGACATATGGTTTAAGACCTATACGGATCGAGGCACTTAGACCAAGACGCCTTGTCTCAAATCTACCCATAGCAACACCCTGGACCATCGTGAATAACCTCTTAGTGACCAATACTGATCAGCGGCGATAGTCGCCGGGCCTGCAAGCTGACACGTGGACGCATCGCGGAACCGTTTTCAGGGCCCTACAGGCAAAAAATAGAGTCGGGCGTAAGCCGGCGATCGCAATACCTCTATAAACGAGTACGACCTGCTGACTCCTGTGGGCCCCAACCTTTTCCACATTGGCCAATTGTATTTACGGTATTCTTATACAAACTTGCTGGTTGGCTCTGTGACCGTCCTGAGCATTCAATTACAGCCACGAAGCACTACTATTGCCATCCTGCACACCCCGATAGATAGCCTATCAAGAGACCTTGAATCGCCCTACCAAAGCACTTTGCAAGTACTCTGACCTAGGGAATCATAAGTCTAGCGCTGCGATATACCCATTACCTCCGGCGGAGGAGGCGGTGCGATCTAAAAAATGTAGTATAAACATCAAAGATAGTCAAGGATGTTGTTTGACACACGGGGTCAGATTAGGATTAGTTCTCGGAGAGATGCCTTGTCCAACTCAGACTAAAGGGCAAGCCATACAGTGATATAGCTACCCCGGGGGCTACCAAGTCGTTCATGTCCGAGGGGGTTTCACAATCCATAGGGACCTGATCGACCCTTTCCCACTCTAGCCGAGCTTTTGGGATCTTGTGCCGTTACGGATGACGCGTGGGCTTTGATGATAATTGCGAGGTGGGCGTCATCCCGTCAGACCAGGACGAATTTTCACCAACAAAATGGGCGTCGTATCTTTGGCATTTGTGGAATGGACCAACCGGTAATGGGGCGATCAACTAGACTGCTACCGCGCCATGCATGATATTAGAAGTCCGGGGGGCTGGCAAGCCATTAGTGATTTGCAGCGTGGGGGACGACCGCGGATAAGCCGCCTCTCCTTATGGGTCCGAGGCAATCTCCCCAGCTATAGTCCTGAATCCCATCTTTAATCACTGACGAAGCGGTCGCGTTACCTCGCCGAGCTGCCAGCTACTATGTCACGCGTCACCCTGCCTCCGTGCATTGGAAAAAACGCTCAGAACAAGTACTCTGTTACGCAACACCATCCAAGAAGGCAATTTGCTAGCAATCGGACCGATGTGGGTGGTAGTGAGCACGTCTGTGCCCCTCGGGATTAAATGATACGGCCTTTACGGTGAGACACGGAAGGTCGCTTTCACCAGTTAGTGAAGCTACTTTCGCCACGCTGCGAAGGATATTTTGCCATACCGCACTAACTCCGTTGCCACCTAGGTTCACAAAAGATAATGAGGCATTACCCCGACTACATTTACGGGGCAAGGATTATAAAGCTATGGGCTCGTCAATAGTCCCAAACGATCCAAGGTGTTTGGCAACTAAGCATCATATACCACGAGATCGCCAGCGCTTCCCCGGAGAATAAATAAAGTGCTTTAAGTGGTCACTCCGTTGAAGTAAGTCCGCATATAGCTGCAGGGGGGGGTAGCTTCCCTGTACGGGCCCCCATATCTACAGGTGCATATAACTTCCGCGACCGGGTCGCTACTATTATAGTCCGCAAAGCCCAGAACGGGTCTCCGTGTGAATATGTGGGAGCAGCCGGAAAACATTAAAAAACGGAGTGTATCATCATAGGTGACTAAGCGCCCGAGAGACATCAAGTGGTAAAGACACTAATCCGTGGAAGTATGTACTGCCCGGAGGAGACTACGCATGGTAGAACCATACAATGCACCTAAGTTCTCAGATCGCGAACCTTATAATTATATAACTCGGTACAGTTACGCGTTAAATGAGACAATTCGACATACTGAGGTTGCGGACCTATGTGCACGCTTGACTGCTGTCGACTAGCTGTGGTGCTGCCTGTGCGGGTGGGATTATGAAGCCATGGCGGTGCGGGCTCGAAGTGTCTCGATGGCCCCCGCTCACTTTCGACCACGCAGATGATATAATCATCATTTCTCAGCTTGATGGTGTCAAATCCTAAGAGAGAAACTGGGGCCAAGATGCGAGAGAATACACGGGCAGTCGGCAAAGAGAATTCTCAGTGTCTGTTCAAGGATGTTGTCTCATTGCCAACAGACCTGAGGACTCCTCGCCTTCAAATTTTTTGCGCTCTGCCCCCCGAAAACTTGAGTGAGTAGGTCGGG"
+    ref_minimizers = generate_minimizers(str(gen_ref), w, k)
+    sequence = [""] * len(gen_ref)
+    read_minimizers = generate_minimizers(gen_read, w, k)
+    aligning_minimizers = find_aligning_minimizers(ref_minimizers,
+                                                   read_minimizers)
+    start_position, result, score = align_sequences(str(gen_ref), gen_read,
+                                                    aligning_minimizers)
+    print(start_position, result, score)
 
 
 def main():
     k, w = 10, 5
+    gen_ref = read_fasta("data/ecoli.fasta")[0].seq
+    gen_reads = read_fasta("data/ecoli_simulated_reads.fasta")
 
     gen_ref = read_fasta("data/lambda.fasta")[0].seq
     gen_reads = read_fasta("data/lambda_simulated_reads.fasta")
@@ -43,6 +57,7 @@ def main():
 
     ref_minimizers = generate_minimizers(gen_ref, w, k)
 
+    sequence = [""] * len(gen_ref)
     for gen_read in gen_reads:
         gen_read = str(gen_read.seq)
         gen_read_reversed = reversed_complement(gen_read)
@@ -52,12 +67,23 @@ def main():
                                                        read_minimizers)
         aligning_minimizers_reversed = find_aligning_minimizers(ref_minimizers,
                                                                 read_minimizers_reversed)
-        subsequence, position, score = align_sequences(gen_ref, gen_read,
-                                             aligning_minimizers)
-        subsequence_reversed, position_reversed, score_reversed = align_sequences(gen_ref,
-                                                               gen_read_reversed,
-                                                               aligning_minimizers_reversed)
-        print(f"Score: {score}, Score reversed: {score_reversed}")
+        start_position, result, score = align_sequences(gen_ref, gen_read,
+                                                        aligning_minimizers)
+        start_position_reversed, result_reversed, score_reversed = align_sequences(
+            gen_ref, gen_read_reversed,
+            aligning_minimizers_reversed)
+
+        try:
+            if score > score_reversed:
+                for i in range(len(result)):
+                    sequence[start_position + i] += result[i] + ","
+            else:
+                for i in range(len(result_reversed)):
+                    sequence[start_position_reversed + i] += result_reversed[
+                                                                 i] + ","
+        except IndexError:
+            raise IndexError("Index out of range")
+    find_mutations(gen_ref, sequence, "data/mutations.txt")
 
 
 if __name__ == '__main__':
