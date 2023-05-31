@@ -14,20 +14,25 @@ def reversed_complement(sequence: str) -> str:
 def find_mutations(gen_ref: str, sequence, filename: str):
     """Find mutations in a sequence compared to a reference genome
     and write them to a file"""
+    with open("data/bla.txt", "w") as f:
+        for s in sequence:
+            f.write(s + "\n")
+
     with open(filename, "w") as file:
         for i in range(len(gen_ref)):
-            sequence_list = sequence[i].split(",")
-            chosen, chosen_count = \
-                collections.Counter(sequence_list).most_common(1)[0][0]
-            if chosen != gen_ref[i]:
-                if chosen == "-":
-                    file.write(f"D,{i},-\n")
-                elif len(chosen) > 1:
-                    for letter in range(chosen):
-                        file.write(f"I,{i},{letter}\n")
-                else:
-                    file.write(f"X,{i},{chosen}\n")
-                file.write(f"{i} {chosen} {chosen_count}\n")
+            if sequence[i]:
+                sequence_list = sequence[i].split(",")
+                chosen, chosen_count = \
+                    collections.Counter(sequence_list).most_common(1)[0]
+                if chosen != gen_ref[i]:
+                    if chosen == "-":
+                        file.write(f"D,{i},-\n")
+                    elif len(chosen) > 1:
+                        for letter in range(chosen):
+                            file.write(f"I,{i},{letter}\n")
+                    else:
+                        file.write(f"X,{i},{chosen}\n")
+                    file.write(f"{i} {chosen} {chosen_count}\n")
 
 
 def test_main():
@@ -46,6 +51,7 @@ def test_main():
 
 def main():
     k, w = 10, 5
+    mini_n = 20
     gen_ref = read_fasta("data/ecoli.fasta")[0].seq
     gen_reads = read_fasta("data/ecoli_simulated_reads.fasta")
 
@@ -63,26 +69,33 @@ def main():
         gen_read_reversed = reversed_complement(gen_read)
         read_minimizers = generate_minimizers(gen_read, w, k)
         read_minimizers_reversed = generate_minimizers(gen_read_reversed, w, k)
-        aligning_minimizers = find_aligning_minimizers(ref_minimizers,
-                                                       read_minimizers)
-        aligning_minimizers_reversed = find_aligning_minimizers(ref_minimizers,
-                                                                read_minimizers_reversed)
-        start_position, result, score = align_sequences(gen_ref, gen_read,
-                                                        aligning_minimizers)
-        start_position_reversed, result_reversed, score_reversed = align_sequences(
-            gen_ref, gen_read_reversed,
-            aligning_minimizers_reversed)
 
-        try:
-            if score > score_reversed:
-                for i in range(len(result)):
-                    sequence[start_position + i] += result[i] + ","
-            else:
-                for i in range(len(result_reversed)):
-                    sequence[start_position_reversed + i] += result_reversed[
-                                                                 i] + ","
-        except IndexError:
-            raise IndexError("Index out of range")
+        start_position, result, score = 0, [], 0
+        start_position_reversed, result_reversed, score_reversed = 0, [], 0
+        if len(read_minimizers) >= mini_n:
+            aligning_minimizers = find_aligning_minimizers(ref_minimizers,
+                                                           read_minimizers)
+            start_position, result, score = align_sequences(gen_ref, gen_read,
+                                                            aligning_minimizers)
+        if len(read_minimizers_reversed) >= mini_n:
+            aligning_minimizers_reversed = find_aligning_minimizers(
+                ref_minimizers,
+                read_minimizers_reversed)
+            start_position_reversed, result_reversed, score_reversed = align_sequences(
+                gen_ref, gen_read_reversed,
+                aligning_minimizers_reversed)
+
+        if score != 0 or score_reversed != 0:
+            try:
+                if score >= score_reversed:
+                    for i in range(len(result)):
+                        sequence[start_position + i] += result[i] + ","
+                else:
+                    for i in range(len(result_reversed)):
+                        sequence[start_position_reversed + i] += result_reversed[
+                                                                     i] + ","
+            except IndexError:
+                raise IndexError("Index out of range")
     find_mutations(gen_ref, sequence, "data/mutations.txt")
 
 
