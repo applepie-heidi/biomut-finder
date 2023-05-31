@@ -1,0 +1,1782 @@
+Runtime alignment: 6.4852 seconds.
+----------------------finish-------------------------------
+
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 155
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 157
+---------------------
+mutation: - instead C, Counter({'-': 1}), ('-',)
+('C', '-') 159
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 160
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 161
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 163
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 164
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 212
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 214
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 215
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 216
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 217
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 218
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 219
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 220
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 223
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 224
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 225
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 227
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 228
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 229
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 230
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 231
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 232
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 233
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 234
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 235
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 236
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 239
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 241
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 244
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 246
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 247
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 248
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 249
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 250
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 251
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 252
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 253
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 255
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 256
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 257
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 259
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 260
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 261
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 262
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 263
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 266
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 524
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 525
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 527
+---------------------
+mutation: - instead C, Counter({'-': 1}), ('-',)
+('C', '-') 528
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 529
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 530
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 553
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 554
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 555
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 556
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 558
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 559
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 560
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 562
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 563
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 565
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 566
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 625
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 626
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 627
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 628
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 629
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 630
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 631
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 632
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 633
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 634
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 727
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 980
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 981
+---------------------
+mutation: T instead G, Counter({'T': 2}), ('T', 'T')
+('G', 'T', 'T') 1166
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 1231
+---------------------
+mutation: G instead T, Counter({'G': 3, 'T': 1}), ('G', 'T', 'G', 'G')
+('T', 'G', 'T', 'G', 'G') 1323
+---------------------
+mutation: T instead A, Counter({'T': 4, 'A': 1}), ('T', 'T', 'A', 'T', 'T')
+('A', 'T', 'T', 'A', 'T', 'T') 1332
+---------------------
+mutation: C instead G, Counter({'C': 4, 'G': 1}), ('C', 'C', 'G', 'C', 'C')
+('G', 'C', 'C', 'G', 'C', 'C') 1333
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 1453
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 1454
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 1455
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 1456
+---------------------
+mutation: C instead T, Counter({'C': 3, 'T': 1}), ('C', 'T', 'C', 'C')
+('T', 'C', 'T', 'C', 'C') 1482
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 3497
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 3498
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 3499
+---------------------
+mutation: G instead A, Counter({'G': 2}), ('G', 'G')
+('A', 'G', 'G') 3500
+---------------------
+mutation: C instead T, Counter({'C': 2}), ('C', 'C')
+('T', 'C', 'C') 3894
+---------------------
+mutation: C instead G, Counter({'C': 5, 'T': 1}), ('T', 'C', 'C', 'C', 'C', 'C')
+('G', 'T', 'C', 'C', 'C', 'C', 'C') 3924
+---------------------
+mutation: T instead G, Counter({'T': 3}), ('T', 'T', 'T')
+('G', 'T', 'T', 'T') 4186
+---------------------
+mutation: - instead C, Counter({'-': 1}), ('-',)
+('C', '-') 6197
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 6198
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 6884
+---------------------
+mutation: T instead C, Counter({'T': 4, '-': 1}), ('T', '-', 'T', 'T', 'T')
+('C', 'T', '-', 'T', 'T', 'T') 9576
+---------------------
+mutation: C instead T, Counter({'C': 3, 'G': 1}), ('G', 'C', 'C', 'C')
+('T', 'G', 'C', 'C', 'C') 12711
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 12895
+---------------------
+mutation: G instead C, Counter({'G': 3, 'C': 1}), ('C', 'G', 'G', 'G')
+('C', 'C', 'G', 'G', 'G') 15053
+---------------------
+mutation: C instead T, Counter({'C': 4, 'T': 1}), ('C', 'T', 'C', 'C', 'C')
+('T', 'C', 'T', 'C', 'C', 'C') 15570
+---------------------
+mutation: T instead G, Counter({'T': 5, 'G': 1, '-': 1}), ('T', 'G', 'T', 'T', '-', 'T', 'T')
+('G', 'T', 'G', 'T', 'T', '-', 'T', 'T') 15577
+---------------------
+mutation: T instead C, Counter({'T': 3, 'C': 1}), ('T', 'T', 'C', 'T')
+('C', 'T', 'T', 'C', 'T') 16102
+---------------------
+mutation: C instead G, Counter({'C': 3, 'G': 1}), ('C', 'C', 'C', 'G')
+('G', 'C', 'C', 'C', 'G') 16360
+---------------------
+mutation: T instead G, Counter({'T': 4, 'A': 1}), ('A', 'T', 'T', 'T', 'T')
+('G', 'A', 'T', 'T', 'T', 'T') 16812
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 18443
+---------------------
+mutation: C instead A, Counter({'C': 5, 'G': 1, 'T': 1}), ('C', 'C', 'C', 'G', 'T', 'C', 'C')
+('A', 'C', 'C', 'C', 'G', 'T', 'C', 'C') 26646
+---------------------
+mutation: T instead A, Counter({'T': 6, 'A': 1, 'G': 1}), ('T', 'A', 'T', 'T', 'T', 'G', 'T', 'T')
+('A', 'T', 'A', 'T', 'T', 'T', 'G', 'T', 'T') 27051
+---------------------
+mutation: T instead A, Counter({'T': 7, 'A': 3}), ('T', 'T', 'T', 'T', 'A', 'T', 'A', 'T', 'T', 'A')
+('A', 'T', 'T', 'T', 'T', 'A', 'T', 'A', 'T', 'T', 'A') 27054
+---------------------
+mutation: T instead A, Counter({'T': 5, 'G': 1, 'A': 1}), ('G', 'T', 'T', 'A', 'T', 'T', 'T')
+('A', 'G', 'T', 'T', 'A', 'T', 'T', 'T') 27056
+---------------------
+mutation: C instead A, Counter({'C': 5, 'A': 1}), ('C', 'C', 'A', 'C', 'C', 'C')
+('A', 'C', 'C', 'A', 'C', 'C', 'C') 27869
+---------------------
+mutation: A instead C, Counter({'A': 7, 'C': 2, '-': 1}), ('A', 'A', 'A', '-', 'A', 'C', 'A', 'A', 'A', 'C')
+('C', 'A', 'A', 'A', '-', 'A', 'C', 'A', 'A', 'A', 'C') 28191
+---------------------
+mutation: T instead G, Counter({'T': 11, 'C': 1, 'A': 1}), ('T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'C', 'T', 'A', 'T')
+('G', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'C', 'T', 'A', 'T') 28602
+---------------------
+mutation: G instead T, Counter({'G': 3, 'T': 1}), ('G', 'T', 'G', 'G')
+('T', 'G', 'T', 'G', 'G') 29048
+---------------------
+mutation: C instead T, Counter({'C': 3, 'G': 1}), ('C', 'C', 'C', 'G')
+('T', 'C', 'C', 'C', 'G') 32150
+---------------------
+mutation: A instead C, Counter({'A': 3, 'C': 1}), ('A', 'A', 'A', 'C')
+('C', 'A', 'A', 'A', 'C') 32582
+---------------------
+mutation: T instead A, Counter({'T': 6, 'C': 1, 'A': 1}), ('T', 'T', 'T', 'T', 'C', 'T', 'A', 'T')
+('A', 'T', 'T', 'T', 'T', 'C', 'T', 'A', 'T') 36273
+---------------------
+mutation: G instead C, Counter({'G': 5, '-': 1, 'C': 1}), ('G', '-', 'G', 'C', 'G', 'G', 'G')
+('C', 'G', '-', 'G', 'C', 'G', 'G', 'G') 36867
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 39362
+---------------------
+mutation: T instead G, Counter({'T': 2}), ('T', 'T')
+('G', 'T', 'T') 39804
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 40433
+---------------------
+mutation: A instead G, Counter({'A': 4, 'G': 1}), ('A', 'A', 'A', 'G', 'A')
+('G', 'A', 'A', 'A', 'G', 'A') 40494
+---------------------
+mutation: C instead A, Counter({'C': 2}), ('C', 'C')
+('A', 'C', 'C') 41146
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 41149
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 41150
+---------------------
+mutation: G instead C, Counter({'G': 3}), ('G', 'G', 'G')
+('C', 'G', 'G', 'G') 41510
+---------------------
+mutation: T instead G, Counter({'T': 2}), ('T', 'T')
+('G', 'T', 'T') 41710
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 41715
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 41877
+---------------------
+mutation: A instead T, Counter({'A': 3}), ('A', 'A', 'A')
+('T', 'A', 'A', 'A') 42389
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 42873
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 42874
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 42875
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 43523
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 43676
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 43720
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 43722
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 43724
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 43725
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 43774
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 43775
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 43776
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 43777
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 43866
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 43867
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 43868
+---------------------
+mutation: A instead G, Counter({'A': 2}), ('A', 'A')
+('G', 'A', 'A') 44292
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 44478
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 44479
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 44881
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 44884
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 44891
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 44892
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 44894
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 45133
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 45134
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 45135
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 45136
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 45137
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 45139
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 45141
+---------------------
+mutation: T instead A, Counter({'T': 2}), ('T', 'T')
+('A', 'T', 'T') 45142
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 45144
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 45187
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 45262
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 45269
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 45275
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 45296
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 45297
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 45433
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 45434
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 45438
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 45535
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 45537
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 45538
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 45539
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 45719
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 45720
+---------------------
+mutation: - instead C, Counter({'-': 1}), ('-',)
+('C', '-') 45754
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 45756
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 45757
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 45759
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 45760
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 45761
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 45762
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 45763
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 45764
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 45766
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 45767
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 45768
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 45769
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 45770
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 45771
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 45772
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 45773
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 45775
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 45776
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 45777
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 45779
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 45780
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 45791
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 45793
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 45794
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 45940
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 45941
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 45943
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 45945
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 45946
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 45948
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 45984
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 45985
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 45988
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 45989
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 45990
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 45991
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 45992
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 45993
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 45994
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 45995
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 45996
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 45997
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 45998
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 45999
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 46002
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 46003
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 46004
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 46005
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 46006
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 46009
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 46010
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 46129
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 46130
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 46131
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 46134
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 46136
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 46138
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 46139
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 46140
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 46143
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 46144
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 46146
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 46147
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 46148
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 46149
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 46150
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 46152
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 46153
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 46154
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 46155
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 46156
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 46157
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 46208
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 46209
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 46210
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 46212
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 46213
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 46214
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 46215
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 46323
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 46325
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 46328
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 46329
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 46331
+---------------------
+mutation: - instead C, Counter({'-': 1}), ('-',)
+('C', '-') 46332
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 46333
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 46334
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 46335
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 46336
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 46337
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 46339
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 46340
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 46341
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 46380
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 46382
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 46384
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 46385
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 46386
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 46387
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 46388
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 46389
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 46392
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 46394
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 46395
+---------------------
+mutation: - instead C, Counter({'-': 1}), ('-',)
+('C', '-') 46396
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 46397
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 46398
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 46399
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 46400
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 46402
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 46404
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 46405
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 46406
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 46407
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 46408
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 46409
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 46410
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 46411
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 46412
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 46483
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 46486
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 46487
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 46489
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 46490
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 46491
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 46492
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 46493
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 46494
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 46495
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 46496
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 46498
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 46499
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 46500
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 46501
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 46502
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 46503
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 46504
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 46505
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 46506
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 46507
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 46508
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 46510
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 46511
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 46514
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 46516
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 46517
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 46518
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 46519
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 46520
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 46521
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 46523
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 46524
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 46525
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 46598
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 46599
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 46600
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 46601
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 46604
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 46605
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 46606
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 46607
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 46609
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 46610
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 46611
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 46612
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 46613
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 46614
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 46615
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 46616
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 46617
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 46825
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 46826
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 46828
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 46829
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 46936
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 46939
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 46940
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 46941
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 46942
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 46944
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 46945
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 46946
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 46948
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 46949
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 46950
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 46951
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47101
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 47104
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 47106
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47107
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 47108
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47109
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 47110
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 47111
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47112
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47114
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 47115
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47116
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 47117
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 47118
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47119
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47122
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47123
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 47124
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 47125
+---------------------
+mutation: - instead C, Counter({'-': 1}), ('-',)
+('C', '-') 47127
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47128
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47129
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 47130
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 47132
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 47133
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47134
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 47135
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 47138
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 47139
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47140
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47141
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 47142
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47145
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 47146
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 47147
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 47148
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 47205
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 47207
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 47208
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 47211
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 47212
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 47214
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47215
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47216
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 47217
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 47218
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47219
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 47220
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 47221
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 47223
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 47224
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 47225
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 47226
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47228
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 47229
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47231
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47426
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 47427
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47428
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 47429
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 47430
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 47431
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47432
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47435
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47436
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 47437
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 47439
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 47440
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47441
+---------------------
+mutation: - instead C, Counter({'-': 1}), ('-',)
+('C', '-') 47443
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 47445
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 47446
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 47448
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 47449
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47450
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47451
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47452
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 47453
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 47454
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47456
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47457
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47458
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 47460
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 47461
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 47463
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 47464
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 47687
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 47688
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47689
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 47690
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47691
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47692
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47695
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47698
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 47699
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 47700
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 47701
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 47702
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 47704
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 47705
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 47706
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 47708
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 47709
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 47711
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 47712
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47715
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 47716
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 47717
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 47718
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47719
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 47722
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 47723
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 47724
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 47725
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 47726
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47728
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 47730
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 47731
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 47733
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47734
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47737
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 47738
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47837
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47838
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 47839
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 47840
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 47841
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 47843
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 47844
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 47845
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 47846
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47847
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 47848
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 47915
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47918
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 47947
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 47950
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 47988
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 47994
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 47998
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 47999
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 48000
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 48001
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 48002
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 48003
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 48004
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 48005
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 48006
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 48008
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 48009
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 48011
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 48012
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 48013
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 48014
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 48015
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 48016
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 48018
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 48019
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 48020
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 48021
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 48022
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 48111
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 48113
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 48114
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 48115
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 48116
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 48137
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 48138
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 48139
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 48140
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 48142
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 48143
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 48144
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 48145
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 48147
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 48148
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 48149
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 48210
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 48211
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 48212
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 48213
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 48214
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 48215
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 48216
+---------------------
+mutation: - instead G, Counter({'-': 1}), ('-',)
+('G', '-') 48218
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 48219
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 48221
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 48222
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 48223
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 48224
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 48225
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 48334
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 48337
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 48339
+---------------------
+mutation: C instead A, Counter({'C': 1}), ('C',)
+('A', 'C') 48372
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 48373
+---------------------
+mutation: G instead C, Counter({'G': 1}), ('G',)
+('C', 'G') 48374
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 48376
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 48377
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 48378
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 48380
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 48381
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 48382
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 48383
+---------------------
+mutation: A instead G, Counter({'A': 1}), ('A',)
+('G', 'A') 48384
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 48389
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 48390
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 48391
+---------------------
+mutation: A instead C, Counter({'A': 1}), ('A',)
+('C', 'A') 48392
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 48393
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 48394
+---------------------
+mutation: T instead C, Counter({'T': 1}), ('T',)
+('C', 'T') 48395
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 48396
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 48397
+---------------------
+mutation: G instead A, Counter({'G': 1}), ('G',)
+('A', 'G') 48398
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 48399
+---------------------
+mutation: C instead T, Counter({'C': 1}), ('C',)
+('T', 'C') 48400
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 48401
+---------------------
+mutation: C instead G, Counter({'C': 1}), ('C',)
+('G', 'C') 48402
+---------------------
+mutation: - instead A, Counter({'-': 1}), ('-',)
+('A', '-') 48403
+---------------------
+mutation: - instead T, Counter({'-': 1}), ('-',)
+('T', '-') 48404
+---------------------
+mutation: T instead A, Counter({'T': 1}), ('T',)
+('A', 'T') 48406
+---------------------
+mutation: G instead T, Counter({'G': 1}), ('G',)
+('T', 'G') 48407
+---------------------
+mutation: A instead T, Counter({'A': 1}), ('A',)
+('T', 'A') 48408
+---------------------
+mutation: T instead G, Counter({'T': 1}), ('T',)
+('G', 'T') 48410
+---------------------
+992
+
+Process finished with exit code 0
