@@ -1,5 +1,6 @@
 import collections
 
+import mapper
 from mapper import find_aligning_minimizers, align_sequences
 from minimizers import generate_minimizers
 from readfasta import read_fasta
@@ -32,21 +33,44 @@ def find_mutations(gen_ref: str, sequence, filename: str):
                             file.write(f"I,{i},{letter}\n")
                     else:
                         file.write(f"X,{i},{chosen}\n")
-                    file.write(f"{i} {chosen} {chosen_count}\n")
+
+
+def is_removeable(minimizers):
+    """Check if a minimizer is removeable"""
+
+    factor = 0.001
+
+    minimizer_prev = minimizers[0]
+    for minimizer in minimizers[1:]:
+        ref = minimizer[1] - minimizer_prev[1]
+        read = minimizer[2] - minimizer_prev[2]
+        if ref / read < factor or read / ref < factor:
+            return True
+        minimizer_prev = minimizer
+    return False
+
 
 
 def test_main():
-    k, w = 10, 5
-    gen_ref = read_fasta("data/lambda.fasta")[0].seq
-    gen_read = "GGGACGAAGGTTCCTGCGCGGTTAGATCGATTATTATTCGGTGCCGATATTCGTAGAACAAAACCGAGGACACTGGAAGGGCGAGTAGCTCTCTCTCGCAAGGGGACTTGGGTACAAGGATGCAAACCTGCAAAAACCAATATCAGGCTGGGGCTACATTTTCGAGTAGGAATACACAGTCGTGTAACCTTGAGATCTTTCACATTAATCCCAACGACCACAGTCGTACACGAGCATCTTACGGAAGTTTATTTAGATTCCGGGCAAAGCGCATCAACAGCGGGTATGTTGTAATAAACCGCTTGGGGTGATTTTGGAGCCATAAAGCTGGCACTTGTTGCGAGTCGCTTTGGGGTGAAGTCTCATACCTCTCGGGTCGGGACTGCCAGACAGGACTAGCAGCCCTCGTCGCCAATATCATCGCCCCAAGGCAGTAACATATTCCAATAGTTAGTGGCGCTTAATTCGATACCGTAACAGATTACTACTACAATTCGGTATGTCATGATGACTGATCGTCACCTGGATAAAGTGTGTTATCTAGGCGCGTCTCTGAGGTCAGCTATTTCCTTTTTTGCTTAAGAAACCTCCGGGAACCAGTGCACCGCCGGACGTGAAGTGCAGGAGCACAATCCGCACTGCCCGACACGCTCAAGCAGATGAGCGGCGCTCCCCGGTTTCACGGATATGTGGTTGGTGGCGACTATTAGTATTAGACCCTTCGTCGTACAGTTTATCCGGAGCGTAGCGGGGCGGTTCGCGATGCTGACTTCCTTCGCCATGTGCCCGTGCGGGATAGAAAGGTCTAATGACATATGGTTTAAGACCTATACGGATCGAGGCACTTAGACCAAGACGCCTTGTCTCAAATCTACCCATAGCAACACCCTGGACCATCGTGAATAACCTCTTAGTGACCAATACTGATCAGCGGCGATAGTCGCCGGGCCTGCAAGCTGACACGTGGACGCATCGCGGAACCGTTTTCAGGGCCCTACAGGCAAAAAATAGAGTCGGGCGTAAGCCGGCGATCGCAATACCTCTATAAACGAGTACGACCTGCTGACTCCTGTGGGCCCCAACCTTTTCCACATTGGCCAATTGTATTTACGGTATTCTTATACAAACTTGCTGGTTGGCTCTGTGACCGTCCTGAGCATTCAATTACAGCCACGAAGCACTACTATTGCCATCCTGCACACCCCGATAGATAGCCTATCAAGAGACCTTGAATCGCCCTACCAAAGCACTTTGCAAGTACTCTGACCTAGGGAATCATAAGTCTAGCGCTGCGATATACCCATTACCTCCGGCGGAGGAGGCGGTGCGATCTAAAAAATGTAGTATAAACATCAAAGATAGTCAAGGATGTTGTTTGACACACGGGGTCAGATTAGGATTAGTTCTCGGAGAGATGCCTTGTCCAACTCAGACTAAAGGGCAAGCCATACAGTGATATAGCTACCCCGGGGGCTACCAAGTCGTTCATGTCCGAGGGGGTTTCACAATCCATAGGGACCTGATCGACCCTTTCCCACTCTAGCCGAGCTTTTGGGATCTTGTGCCGTTACGGATGACGCGTGGGCTTTGATGATAATTGCGAGGTGGGCGTCATCCCGTCAGACCAGGACGAATTTTCACCAACAAAATGGGCGTCGTATCTTTGGCATTTGTGGAATGGACCAACCGGTAATGGGGCGATCAACTAGACTGCTACCGCGCCATGCATGATATTAGAAGTCCGGGGGGCTGGCAAGCCATTAGTGATTTGCAGCGTGGGGGACGACCGCGGATAAGCCGCCTCTCCTTATGGGTCCGAGGCAATCTCCCCAGCTATAGTCCTGAATCCCATCTTTAATCACTGACGAAGCGGTCGCGTTACCTCGCCGAGCTGCCAGCTACTATGTCACGCGTCACCCTGCCTCCGTGCATTGGAAAAAACGCTCAGAACAAGTACTCTGTTACGCAACACCATCCAAGAAGGCAATTTGCTAGCAATCGGACCGATGTGGGTGGTAGTGAGCACGTCTGTGCCCCTCGGGATTAAATGATACGGCCTTTACGGTGAGACACGGAAGGTCGCTTTCACCAGTTAGTGAAGCTACTTTCGCCACGCTGCGAAGGATATTTTGCCATACCGCACTAACTCCGTTGCCACCTAGGTTCACAAAAGATAATGAGGCATTACCCCGACTACATTTACGGGGCAAGGATTATAAAGCTATGGGCTCGTCAATAGTCCCAAACGATCCAAGGTGTTTGGCAACTAAGCATCATATACCACGAGATCGCCAGCGCTTCCCCGGAGAATAAATAAAGTGCTTTAAGTGGTCACTCCGTTGAAGTAAGTCCGCATATAGCTGCAGGGGGGGGTAGCTTCCCTGTACGGGCCCCCATATCTACAGGTGCATATAACTTCCGCGACCGGGTCGCTACTATTATAGTCCGCAAAGCCCAGAACGGGTCTCCGTGTGAATATGTGGGAGCAGCCGGAAAACATTAAAAAACGGAGTGTATCATCATAGGTGACTAAGCGCCCGAGAGACATCAAGTGGTAAAGACACTAATCCGTGGAAGTATGTACTGCCCGGAGGAGACTACGCATGGTAGAACCATACAATGCACCTAAGTTCTCAGATCGCGAACCTTATAATTATATAACTCGGTACAGTTACGCGTTAAATGAGACAATTCGACATACTGAGGTTGCGGACCTATGTGCACGCTTGACTGCTGTCGACTAGCTGTGGTGCTGCCTGTGCGGGTGGGATTATGAAGCCATGGCGGTGCGGGCTCGAAGTGTCTCGATGGCCCCCGCTCACTTTCGACCACGCAGATGATATAATCATCATTTCTCAGCTTGATGGTGTCAAATCCTAAGAGAGAAACTGGGGCCAAGATGCGAGAGAATACACGGGCAGTCGGCAAAGAGAATTCTCAGTGTCTGTTCAAGGATGTTGTCTCATTGCCAACAGACCTGAGGACTCCTCGCCTTCAAATTTTTTGCGCTCTGCCCCCCGAAAACTTGAGTGAGTAGGTCGGG"
-    ref_minimizers = generate_minimizers(str(gen_ref), w, k)
-    sequence = [""] * len(gen_ref)
-    read_minimizers = generate_minimizers(gen_read, w, k)
-    aligning_minimizers = find_aligning_minimizers(ref_minimizers,
-                                                   read_minimizers)
-    start_position, result, score = align_sequences(str(gen_ref), gen_read,
-                                                    aligning_minimizers)
-    print(start_position, result, score)
+    sequence = []
+    with open("data/bla.txt", "r") as f:
+        sequence = f.readlines()
+        sequence = [s.strip() for s in sequence]
+        gen_ref = read_fasta("data/lambda.fasta")[0].seq
+    with open("data/mutations2.txt", "w") as file:
+        print(len(gen_ref))
+        for i in range(len(gen_ref)):
+            if sequence[i]:
+                sequence_list = sequence[i].split(",")
+                chosen = collections.Counter(sequence_list).most_common(1)[0][0]
+                if chosen != gen_ref[i]:
+                    if chosen == "-":
+                        file.write(f"D,{i},-\n")
+                    elif len(chosen) > 1:
+                        for letter in chosen:
+                            file.write(f"I,{i},{letter}\n")
+                    else:
+                        file.write(f"X,{i},{chosen}\n")
 
 
 def main():
@@ -75,15 +99,17 @@ def main():
         if len(read_minimizers) >= mini_n:
             aligning_minimizers = find_aligning_minimizers(ref_minimizers,
                                                            read_minimizers)
-            start_position, result, score = align_sequences(gen_ref, gen_read,
+            if not is_removeable(aligning_minimizers):
+                start_position, result, score = align_sequences(gen_ref, gen_read,
                                                             aligning_minimizers)
         if len(read_minimizers_reversed) >= mini_n:
             aligning_minimizers_reversed = find_aligning_minimizers(
                 ref_minimizers,
                 read_minimizers_reversed)
-            start_position_reversed, result_reversed, score_reversed = align_sequences(
-                gen_ref, gen_read_reversed,
-                aligning_minimizers_reversed)
+            if not is_removeable(aligning_minimizers_reversed):
+                start_position_reversed, result_reversed, score_reversed = align_sequences(
+                    gen_ref, gen_read_reversed,
+                    aligning_minimizers_reversed)
 
         if score != 0 or score_reversed != 0:
             try:
@@ -92,12 +118,17 @@ def main():
                         sequence[start_position + i] += result[i] + ","
                 else:
                     for i in range(len(result_reversed)):
-                        sequence[start_position_reversed + i] += result_reversed[
-                                                                     i] + ","
+                        sequence[start_position_reversed + i] += \
+                            result_reversed[
+                                i] + ","
             except IndexError:
                 raise IndexError("Index out of range")
     find_mutations(gen_ref, sequence, "data/mutations.txt")
 
 
+def minimain():
+    mini_list = [("CAT", 2, 1), ("CAT", 2, 5), ("ATG", 3, 3), ("CAT", 7, 1), ("CAT", 7, 5)]
+    mapper.find_lis(mini_list)
+
 if __name__ == '__main__':
-    main()
+    minimain()
